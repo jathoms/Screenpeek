@@ -32,7 +32,8 @@ const createWindow = () => {
       responseHeaders: {
         ...details.responseHeaders,
         "Content-Security-Policy": [
-          "default-src ws://localhost/ 'self' https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css data: 'unsafe-eval' 'unsafe-inline'",
+          // "default-src ws://localhost/ 'self' https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css 'unsafe-eval' 'unsafe-inline' data: 'unsafe-eval' 'unsafe-inline'"
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https: http:",
         ],
       },
     });

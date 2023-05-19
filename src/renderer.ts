@@ -20,9 +20,9 @@ const colourSame = (colour: colour, oldColour: colour) => {
 
 const ipcRenderer = window.require("electron").ipcRenderer;
 
-const Xbtn = document.getElementById("X");
-const minBtn = document.getElementById("minim");
-const maxBtn = document.getElementById("fullscr");
+const Xbtn = document.getElementById("X")!;
+const minBtn = document.getElementById("minim")!;
+const maxBtn = document.getElementById("fullscr")!;
 const logo = document.getElementById("logo");
 const titleBar = document.getElementById("title-bar");
 const sidebarTiles = document.getElementsByClassName("sidebar-element");
@@ -150,7 +150,7 @@ ipcRenderer.on("SOURCE_SEND", async (e, sourceId: string) => {
 });
 
 videoSelectBtn.onclick = getVideoSources;
-let go: NodeJS.Timer;
+let go: NodeJS.Timer | null;
 getBtn.addEventListener("click", () => {
   polling = !polling;
   console.log(`polling: ${polling}`);

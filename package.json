@@ -14,7 +14,9 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "start": "parcel serve ./public/index.html --public-url ./",
-    "electron": "electron ."
+    "start-parcel": "parcel serve ./public/index.html --public-url ./",
+    "electron": "electron .",
+    "start-react": "cd ./src && npm run build",
+    "start": "npm run start-react && npm run electron"
   }
 }
